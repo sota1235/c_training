@@ -13,6 +13,13 @@ int isStart(char *str) {
 }
 
 /**
+ * 文字列が数字かどうか判別
+ */
+int isNumber(char *str) {
+  return isdigit(*str);
+}
+
+/**
  * メイン関数
  */
 int main(int argc, char *argv[]) {
@@ -25,7 +32,7 @@ int main(int argc, char *argv[]) {
 
     if (isStart(argv[i])) {
       printf("コイツはカッコの始まりだ！！\n");
-    } else if (isdigit(*argv[i])) {
+    } else if (isNumber(argv[i])) {
       printf("コイツは数字だ！！\n");
     }
   }
