@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<string.h>
+#include<ctype.h>
 
 /**
  * 文字列がカッコの始まりかどうか判別
  */
 int isStart(char *str) {
-  if (strcmp(str, "(") == 0) {
+  if (strcmp(str, "[") == 0) {
     return 1;
   }
   return 0;
@@ -23,7 +24,9 @@ int main(int argc, char *argv[]) {
     printf("%d番目の引数 : %s\n", i, argv[i]);
 
     if (isStart(argv[i])) {
-      printf("コイツは(だ！！\n");
+      printf("コイツはカッコの始まりだ！！\n");
+    } else if (isdigit(*argv[i])) {
+      printf("コイツは数字だ！！\n");
     }
   }
 
